@@ -1,10 +1,10 @@
 <template>
-  <div id="app" style="height:100vh; width:100vw; position:fixed;">
+  <div id="app" style="height:100vh; width:50vw; position:fixed; right:0;">
     <PDFView
       :src.sync="src"
       ref="pdfView"
       fileName="order"
-      pageNumber="6"
+      pageNumber="4"
       :sidebarFeatureVisible="true"
       :downloadFeatureVisible="true"
       :dropzoneFeatureVisible="true"
