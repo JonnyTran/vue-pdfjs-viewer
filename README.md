@@ -1,11 +1,11 @@
-# @gabrielbu/vue-pdf-viewer
+# @jonnytran/vue-pdf-viewer
 
 Vue PDF viewer components implemented using PDFJS.
 
 ## Install
 
 ```bash
-npm install --save @gabrielbu/vue-pdf-viewer
+npm install --save @jonnytran/vue-pdf-viewer
 ```
 
 ## Demo
@@ -29,7 +29,7 @@ npm install --save @gabrielbu/vue-pdf-viewer
   </div>
 </template>
 <script>
-import {PDFView} from '@gabrielbu/vue-pdf-viewer';
+import {PDFView} from '@jonnytran/vue-pdf-viewer';
 export default {
   components:{
   // ...

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="height:100vh; width:50vw; position:fixed; right:0;">
+  <div id="app" style="height:100vh; width:50vw; position:fixed; right:0; top:50px">
     <PDFView
       :src.sync="src"
       ref="pdfView"
