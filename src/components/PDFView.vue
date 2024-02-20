@@ -55,10 +55,6 @@ export default {
     src: {
       default: null
     },
-    pageNumber: {
-      type: Number,
-      default: 1
-    },
     toolbarVisible: {
       type: Boolean,
       default: true
@@ -82,7 +78,11 @@ export default {
     fileName: {
       type: String,
       default: Date.now() + ""
-    }
+    },
+    pageNumber: {
+      type: [Number, String],
+      default: 1
+    },
   },
 
   provide() {

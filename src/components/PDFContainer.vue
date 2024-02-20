@@ -68,7 +68,7 @@ export default {
       }
     },
     pageNumber: {
-      type: Number,
+      type: [Number, String],
       default: 1
     },
   },
