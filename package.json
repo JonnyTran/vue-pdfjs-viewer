@@ -100,8 +100,8 @@
     "postversion": "git push && git push --tags"
   },
   "unpkg": "dist/vue-pdfjs-viewer.min.js",
-  "version": "0.1.19",
-  "author": "Gabriel Buragev",
+  "version": "0.2.0",
+  "author": "Jonny Tran",
   "license": "MIT",
   "keywords": [
     "vue",
