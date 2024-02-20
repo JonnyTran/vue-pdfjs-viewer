@@ -15,6 +15,7 @@
     </PDFToolbar>
     <PDFContainer
       v-model="viewer.content"
+      :page-number="pageNumber"
       :scale="viewer.toolbar.scale"
       :loading="viewer.content.loading"
       ref="pdfContainer"
@@ -54,6 +55,10 @@ export default {
     src: {
       default: null
     },
+    pageNumber: {
+      type: Number,
+      default: 1
+    },
     toolbarVisible: {
       type: Boolean,
       default: true
@@ -79,6 +84,7 @@ export default {
       default: Date.now() + ""
     }
   },
+
   provide() {
     return {
       getFileName: function() {
@@ -86,12 +92,14 @@ export default {
       }.bind(this)
     };
   },
+
   components: {
     PDFToolbar,
     PDFContainer,
     PDFSidebar,
     PDFNotifications
   },
+
   data() {
     return {
       viewer: {
@@ -119,6 +127,7 @@ export default {
       }
     };
   },
+
   async beforeMount() {
     Object.assign(this.viewer.toolbar, {
       downloadFeatureVisible: this.downloadFeatureVisible,
@@ -138,7 +147,12 @@ export default {
       }
     }
   },
+
   watch: {
+    pageNumber(newPageNumber) {
+      if (!newPageNumber || newPageNumber <= 1) return;
+      this.$refs.pdfContainer.scrollToPage(newPageNumber-1);
+    },
     scale(nv) {
       this.viewer.toolbar.scale = nv.toString();
     },
@@ -162,6 +176,7 @@ export default {
       }
     }
   },
+
   methods: {
     onDropzoneDragEnter() {
       this.dropzoneVisible = true;
@@ -215,6 +230,7 @@ export default {
       return array;
     }
   },
+
   computed: {
     normalizedSource() {
       let src = this.src;
@@ -230,6 +246,6 @@ export default {
 
       return src;
     }
-  }
+  },
 };
 </script>

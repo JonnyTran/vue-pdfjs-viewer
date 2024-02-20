@@ -66,7 +66,11 @@ export default {
           pages: []
         };
       }
-    }
+    },
+    pageNumber: {
+      type: Number,
+      default: 1
+    },
   },
   components: {
     PageNotFound,
@@ -92,6 +96,9 @@ export default {
     "value.pdf": async function(pdf) {
       if (pdf) {
         await this.render(pdf);
+        this.$nextTick(() => {
+          this.scrollToPage(this.pageNumber - 1);
+        });
       }
     }
   },
